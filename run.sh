@@ -28,13 +28,14 @@ pr="${nome:0:3}"
 ran=$RANDOM
 sed -i 's/iploc/'"$iploc"'/' docker-compose.yml
 sed -i 's/db_/'db_"$nome"'/' docker-compose.yml
-sed -i 's/db___/'"$nome"'/' .env
+sed -i 's/db__/'"$nome"'/' .env
 sed -i 's/pr_/'"$pr"'/' .env
 sed -i 's/ran_/'"$nome"_"$ran"'/' .env
 sed -i 's/wp__/'wp_"$nome"'/' docker-compose.yml
 sed -i 's/indir1/'"$indir1"'/' docker-compose.yml
 sed -i 's/indir2/'"$indir2"'/' docker-compose.yml
 sed -i 's/indir3/'"$indir3"'/' docker-compose.yml
+sed -i 's/por1/'"$por1"'/' docker-compose.yml
 sed -i 's/por2/'"$por2"'/' docker-compose.yml
 echo "OK TERMINATO"
 echo "############[ AVVIO ]##############"
