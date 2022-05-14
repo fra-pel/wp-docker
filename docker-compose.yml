@@ -37,7 +37,7 @@ services:
     restart: always
     networks:
       default:
-        ipv4_address: indir2
+        ipv4_address: indir3
 
   phpmyadmin:
     depends_on:
@@ -52,7 +52,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-password}
     networks:
      default:
-        ipv4_address: indir3
+        ipv4_address: indir2
 
 
  # Check availability of essential services
