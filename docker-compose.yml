@@ -46,7 +46,7 @@ services:
     container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin
     restart: always
     ports:
-      - iploc:por2::80
+      - iploc:por2:80
     environment:
       PMA_HOST: db_
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-password}
