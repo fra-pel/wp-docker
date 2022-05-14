@@ -18,7 +18,11 @@ services:
       - phpmyadmin
     restart: always
     ports:
-        - 80
+        - ip1:por1:80
+    networks:
+      default:
+        ipv4_address: indir1
+
 
   db_:
     image: mariadb:${MARIADB_VERSION:-latest}
@@ -31,6 +35,9 @@ services:
       - MYSQL_PASSWORD=${DATABASE_PASSWORD:-password}
       - MYSQL_DATABASE=${COMPOSE_PROJECT_NAME:-wordpress}
     restart: always
+    networks:
+      default:
+        ipv4_address: indir2
 
   phpmyadmin:
     depends_on:
@@ -39,10 +46,14 @@ services:
     container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin
     restart: always
     ports:
-      - ${PHPMYADMIN_PORT}:80
+      - ip1:por1::80
     environment:
       PMA_HOST: db_
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-password}
+    networks:
+     default:
+        ipv4_address: indir3
+
 
  # Check availability of essential services
 #  healthcheck:
@@ -60,4 +71,4 @@ services:
 networks:
   default:
     external:
-      name: proxymanager_default
+      name: bridge
