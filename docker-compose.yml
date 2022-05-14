@@ -18,7 +18,7 @@ services:
       - phpmyadmin
     restart: always
     ports:
-        - ip1:por1:80
+        - iploc:por1:80
     networks:
       default:
         ipv4_address: indir1
@@ -46,7 +46,7 @@ services:
     container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin
     restart: always
     ports:
-      - ip1:por1::80
+      - iploc:por2::80
     environment:
       PMA_HOST: db_
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-password}
