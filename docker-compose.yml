@@ -43,7 +43,7 @@ services:
     depends_on:
       - db_
     image: phpmyadmin/phpmyadmin:${PHPMYADMIN_VERSION:-latest}
-    container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin
+    container_name: ${COMPOSE_PROJECT_NAME}_phpma
     restart: always
     ports:
       - iploc:por2:80
