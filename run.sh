@@ -14,14 +14,14 @@ echo "MARIADB - Inserisci indirizzo ip: "
 read indir2
 echo "PHPMYADMIN - Inserisci indirizzo ip: "
 read indir3
-por2=$por1+1
-por3=$por1+2
+por2=$por1+2
+#por3=$por1+2
 echo ""
 echo "################[ DATI ]###################"
 echo ""
 echo "Nome progetto: $nome"
 echo "Indirizzo IP WORDPRESS: $indir1 PORTA: $por1"
-echo "Indirizzo IP MARIADB: $indir2"
+# echo "Indirizzo IP MARIADB: $indir2"
 echo "Indirizzo IP PHPMYADMIN: $indir3 PORTA: $por2"
 echo ""
 pr="${nome:0:3}"
