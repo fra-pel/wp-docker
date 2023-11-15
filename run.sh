@@ -26,6 +26,14 @@ echo "Indirizzo IP PHPMYADMIN: $indir3 PORTA: $por2"
 echo ""
 pr="${nome:0:3}"
 ran=$RANDOM
+mkdir ../$nome
+mkdir ../$nome/wordpress
+mkdir ../$nome/mysql
+mkdir ../$nome/config
+cp config/php.conf.ini ../$nome/config
+cp docker-compose.yml ../$nome/
+cp .env ../$nome/
+cd ../$nome
 sed -i 's/iploc/'"$iploc"'/' docker-compose.yml
 sed -i 's/db_/'db_"$nome"'/' docker-compose.yml
 sed -i 's/db__/'"$nome"'/' .env
