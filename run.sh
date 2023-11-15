@@ -47,4 +47,7 @@ sed -i 's/por1/'"$por1"'/' docker-compose.yml
 sed -i 's/por2/'"$por2"'/' docker-compose.yml
 echo "OK TERMINATO"
 echo "############[ AVVIO ]##############"
+docker pull wordpress:latest
+docker pull mariadb:latest
+docker pull phpmyadmin/phpmyadmin:latest
 docker-compose up -d --build
