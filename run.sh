@@ -3,6 +3,8 @@
 #!/bin/bash
 declare -i por2=0
 declare -i por3=0
+dirs=/var/lib/docker/wp-docker
+mkdir $dirs
 iploc=10.10.5.1
 echo "Inserisci nome progetto: "
 read nome
@@ -26,14 +28,14 @@ echo "Indirizzo IP PHPMYADMIN: $indir3 PORTA: $por2"
 echo ""
 pr="${nome:0:3}"
 ran=$RANDOM
-mkdir ../$nome
-mkdir ../$nome/wordpress
-mkdir ../$nome/mysql
-mkdir ../$nome/config
-cp config/php.conf.ini ../$nome/config
-cp docker-compose.yml ../$nome/
-cp .env ../$nome/
-cd ../$nome
+mkdir $dirs/$nome
+mkdir $dirs/$nome/wordpress
+mkdir $dirs/$nome/mysql
+mkdir $dirs/$nome/config
+cp config/php.conf.ini $dirs/$nome/config
+cp docker-compose.yml $dirs/$nome/
+cp .env $dirs/$nome/
+cd $dirs/$nome
 sed -i 's/iploc/'"$iploc"'/' docker-compose.yml
 sed -i 's/db_/'db_"$nome"'/' docker-compose.yml
 sed -i 's/db__/'"$nome"'/' .env
